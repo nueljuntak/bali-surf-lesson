@@ -1,0 +1,137 @@
+---
+import { Image } from "astro:assets";
+import logoImg from "../assets/logo-putih.png";
+
+// Ambil prop lang dari Layout
+const { lang } = Astro.props;
+
+// Fungsi untuk membuat prefix URL sesuai bahasa
+const getPath = (path: string) => lang === 'id' ? `/id${path}` : path;
+const currentPath = Astro.url.pathname;
+
+// Fungsi untuk mengganti bahasa di halaman yang sama
+const getSwitchUrl = (targetLang: string) => {
+    let newPath = currentPath;
+    if (targetLang === 'id') {
+        if (!newPath.startsWith('/id')) newPath = `/id${newPath === '/' ? '' : newPath}`;
+    } else {
+        newPath = newPath.replace(/^\/id/, '') || '/';
+    }
+    return newPath;
+};
+---
+
+<header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6 px-8 md:px-16 lg:px-24 text-white bg-transparent">
+    <div class="flex items-center justify-between relative max-w-7xl mx-auto w-full">
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50 p-2 focus:outline-none">
+            <span class="w-6 h-0.5 bg-white transition-all duration-300 origin-center" id="line-1"></span>
+            <span class="w-6 h-0.5 bg-white transition-all duration-300 origin-center" id="line-2"></span>
+            <span class="w-6 h-0.5 bg-white transition-all duration-300 origin-center" id="line-3"></span>
+        </button>
+
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide drop-shadow-sm">
+            <a href={getPath("/")} class="nav-link hover:text-yellow-400 transition-colors duration-300">Home</a>
+            <a href={getPath("/classes")} class="nav-link hover:text-yellow-400 transition-colors duration-300">Classes</a>
+            <a href={getPath("/about")} class="nav-link hover:text-yellow-400 transition-colors duration-300">About</a>
+            <a href={getPath("/contact")} class="nav-link hover:text-yellow-400 transition-colors duration-300">Contact</a>
+        </nav>
+
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-50">
+            <a href={getPath("/")} class="block drop-shadow-md hover:scale-105 transition-transform duration-300">
+                <Image src={logoImg} alt="Backwash Surf Bali Logo" class="h-8 md:h-12 w-auto object-contain" />
+            </a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-2 text-sm font-bold drop-shadow-sm">
+            <a href={getSwitchUrl('en')} class={`transition-colors duration-300 ${lang === 'en' ? 'text-yellow-400' : 'hover:text-yellow-400'}`}>EN</a>
+            <span class="text-white/50">|</span>
+            <a href={getSwitchUrl('id')} class={`transition-colors duration-300 ${lang === 'id' ? 'text-yellow-400' : 'text-white/70 hover:text-white'}`}>ID</a>
+        </div>
+    </div>
+</header>
+
+<aside id="mobile-sidebar" class="fixed inset-y-0 left-0 w-64 bg-slate-900/95 backdrop-blur-md text-white transform -translate-x-full transition-transform duration-300 z-40 p-8 pt-24 shadow-2xl md:hidden">
+    <nav class="flex flex-col gap-6 text-lg font-medium">
+        <a href={getPath("/")} class="mobile-nav-link hover:text-yellow-400 transition-colors">Home</a>
+        <a href={getPath("/classes")} class="mobile-nav-link hover:text-yellow-400 transition-colors">Classes</a>
+        <a href={getPath("/about")} class="mobile-nav-link hover:text-yellow-400 transition-colors">About</a>
+        <a href={getPath("/contact")} class="mobile-nav-link hover:text-yellow-400 transition-colors">Contact</a>
+
+        <div class="h-px bg-white/20 my-2"></div>
+
+        <div class="flex items-center gap-4 text-sm font-bold">
+            <a href={getSwitchUrl('en')} class={lang === 'en' ? 'text-yellow-400' : 'text-white'}>EN</a>
+            <a href={getSwitchUrl('id')} class={lang === 'id' ? 'text-yellow-400' : 'text-white/70 hover:text-white'}>ID</a>
+        </div>
+    </nav>
+</aside>
+
+<script>
+    const header = document.getElementById("main-header");
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > 50) {
+            header?.classList.add("bg-[#093C5D]/95", "backdrop-blur-sm", "py-4", "shadow-md");
+            header?.classList.remove("py-6", "bg-transparent");
+        } else {
+            header?.classList.remove("bg-[#093C5D]/95", "backdrop-blur-sm", "py-4", "shadow-md");
+            header?.classList.add("py-6", "bg-transparent");
+        }
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            header?.classList.add("-translate-y-full");
+        } else {
+            header?.classList.remove("-translate-y-full");
+        }
+        lastScrollY = currentScrollY;
+    });
+
+    const menuBtn = document.getElementById("menu-btn");
+    const sidebar = document.getElementById("mobile-sidebar");
+    const line1 = document.getElementById("line-1");
+    const line2 = document.getElementById("line-2");
+    const line3 = document.getElementById("line-3");
+    let isMenuOpen = false;
+
+    menuBtn?.addEventListener("click", () => {
+        isMenuOpen = !isMenuOpen;
+        sidebar?.classList.toggle("-translate-x-full");
+        if (isMenuOpen) {
+            line1?.classList.add("rotate-45", "translate-y-2");
+            line2?.classList.add("opacity-0");
+            line3?.classList.add("-rotate-45", "-translate-y-2");
+        } else {
+            line1?.classList.remove("rotate-45", "translate-y-2");
+            line2?.classList.remove("opacity-0");
+            line3?.classList.remove("-rotate-45", "-translate-y-2");
+        }
+    });
+
+    const navLinks = document.querySelectorAll(".nav-link, .mobile-nav-link");
+    
+    // Normalisasi: Hapus garis miring di akhir URL agar perbandingan lebih presisi (misal: /id/ menjadi /id)
+    let currentPath = window.location.pathname;
+    if (currentPath.length > 1 && currentPath.endsWith('/')) {
+        currentPath = currentPath.slice(0, -1);
+    }
+
+    navLinks.forEach((link) => {
+        let href = link.getAttribute("href") || "";
+        if (href.length > 1 && href.endsWith('/')) {
+            href = href.slice(0, -1);
+        }
+
+        // Identifikasi apakah ini adalah tombol Home ("/" untuk Inggris, "/id" untuk Indo)
+        const isHomeLink = href === '/' || href === '/id';
+        
+        // Tombol akan menyala HANYA JIKA: 
+        // 1. Path-nya sama persis (Match 100%)
+        // 2. ATAU Path-nya merupakan sub-halaman (startsWith), TAPI tombol tersebut BUKAN tombol Home
+        if (currentPath === href || (!isHomeLink && currentPath.startsWith(href))) {
+            link.classList.add("text-yellow-400");
+        } else {
+            link.classList.remove("text-yellow-400");
+        }
+    });
+</script>

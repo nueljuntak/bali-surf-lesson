@@ -1,0 +1,59 @@
+---
+// src/components/ClassPackage.astro
+import { Image } from 'astro:assets';
+
+interface Props {
+    imageSrc: ImageMetadata;
+    imageAlt: string;
+    title: string;
+    price: string;
+    description: string;
+    bookingLink: string;
+    textPosition?: 'left' | 'right';
+}
+
+const { 
+    imageSrc, imageAlt, title, price, description, bookingLink,
+    textPosition = 'left'
+} = Astro.props;
+---
+
+<div class="w-full flex flex-col min-h-screen">
+    <!-- Bagian Foto -->
+    <div class="w-full h-[50vh] md:h-[60vh] relative">
+        <Image 
+            src={imageSrc} 
+            alt={imageAlt} 
+            class="absolute inset-0 w-full h-full object-cover object-center" 
+        />
+    </div>
+
+    <!-- Bagian Teks -->
+    <div class={`w-full flex-1 bg-[#093C5D] text-white flex flex-col px-6 md:px-16 lg:px-32 py-12 md:py-16 ${textPosition === 'right' ? 'items-end text-right' : 'items-start text-left'}`}>
+        <div class="max-w-xl flex flex-col justify-center h-full">
+            <!-- Judul dipertebal (font-bold) dan diperbesar ukurannya -->
+            <h2 class="text-4xl md:text-5xl font-bebas font-bold uppercase tracking-wider mb-4">
+                {title}
+            </h2>
+            
+            <p class="text-xs md:text-sm font-semibold text-gray-300 mb-6">
+                {price}
+            </p>
+            
+            <p class="text-sm md:text-base leading-relaxed text-gray-200 mb-8">
+                {description}
+            </p>
+            
+            <!-- Tombol -->
+            <div class={textPosition === 'right' ? 'flex justify-end' : 'flex justify-start'}>
+                <a 
+                    href={bookingLink} 
+                    target="_blank"
+                    class="inline-block text-base md:text-lg font-bebas tracking-widest uppercase hover:text-yellow-400 transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-yellow-400 after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
+                >
+                    BOOK NOW
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

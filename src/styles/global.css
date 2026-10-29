@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+
+@utility font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+@utility font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+@utility font-handwritten {
+  font-family: 'Caveat', cursive;
+}

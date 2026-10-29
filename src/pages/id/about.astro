@@ -1,0 +1,138 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+import owner4Image from "../../assets/owner4.jpeg";
+import sertiImage from "../../assets/serti.jpeg";
+import logoImage from "../../assets/logo.png";
+---
+
+<Layout title="Tentang Kami - Backwash Surf Bali">
+    
+    <!-- HERO PROFILE SECTION -->
+    <main class="font-sans pt-32 pb-24 bg-[#093C5D] text-white overflow-hidden">
+        <section class="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+            
+            <!-- IMAGE SECTION -->
+            <div class="w-full lg:w-1/2 relative group mt-8 lg:mt-0">
+                <div class="absolute inset-0 bg-yellow-400 translate-x-4 translate-y-4 md:translate-x-6 md:translate-y-6 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                
+                <div class="relative z-10 overflow-hidden shadow-2xl">
+                    <Image 
+                        src={owner4Image} 
+                        alt="Dama Indra - Legenda Selancar Lokal" 
+                        class="w-full h-auto object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
+                    />
+                </div>
+                
+                <!-- BADGE TEKS KIRI BAWAH (Kotak Putih, Miring) -->
+                <div class="absolute -bottom-5 -left-4 md:-bottom-8 md:-left-8 z-20 bg-white text-[#093C5D] font-bebas text-2xl md:text-3xl px-6 py-3 shadow-xl transform -rotate-3">
+                    <span class="tracking-wide uppercase">Asli Warga Lokal</span>
+                </div>
+
+                <!-- LOGO KANAN BAWAH (Nongol, Background Bulat, Miring) -->
+                <div class="absolute -bottom-6 -right-4 md:-bottom-10 md:-right-8 z-30 bg-white rounded-full p-2 md:p-3 shadow-xl transform rotate-12 transition-transform duration-300 hover:rotate-0">
+                    <Image src={logoImage} alt="Backwash Logo" class="w-12 h-12 md:w-16 md:h-16 object-contain" />
+                </div>
+            </div>
+            
+            <!-- CONTENT SECTION -->
+            <div class="w-full lg:w-1/2 flex flex-col justify-center">
+                
+                <h3 class="text-yellow-400 font-bold uppercase tracking-widest mb-3 text-sm md:text-base">
+                    Jiwa di Balik Selancar
+                </h3>
+                
+                <h1 class="text-6xl md:text-8xl font-bebas font-bold text-white uppercase mb-8 tracking-wide drop-shadow-md">
+                    Kenali Dama Indra
+                </h1>
+                
+                <div class="space-y-6 font-sans text-base md:text-lg leading-relaxed text-gray-300">
+                    <p>
+                        Lahir dan dibesarkan di pesisir pantai Indonesia, lautan bukan sekadar tempat bermain—ini adalah rumah saya. Saya Dama Indra, warga lokal yang bangga dan pendiri Backwash Surf Bali. Saya sudah berselancar bahkan sebelum bisa berjalan dengan benar, dibentuk oleh pasang surut desa pesisir kecil.
+                    </p>
+                    <p>
+                        Dengan puluhan tahun pengalaman mengarungi lautan dan menjadi pelatih profesional di seluruh nusantara, saya mengenal perairan ini seperti punggung tangan saya sendiri. Bagi saya, berselancar lebih dari sekadar olahraga; ini adalah jalan hidup, hubungan yang mendalam dengan alam, dan budaya yang penuh semangat serta rasa hormat.
+                    </p>
+                    <p class="font-semibold text-white">
+                        "Baik Anda baru pertama kali mendayung di ombak putih atau ingin menaklukkan ombak luar, tujuan saya sederhana: berbagi semangat selancar asli Bali dengan Anda. Aman, personal, dan selalu dengan senyuman lebar."
+                    </p>
+                </div>
+
+                <!-- QUICK STATS -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 border-t border-white/20 pt-8 mt-8">
+                    <div>
+                        <div class="text-yellow-400 font-bebas text-4xl mb-1">15+</div>
+                        <div class="text-xs uppercase tracking-widest text-gray-400 font-bold">Tahun Berselancar</div>
+                    </div>
+                    <div>
+                        <div class="text-yellow-400 font-bebas text-4xl mb-1">100%</div>
+                        <div class="text-xs uppercase tracking-widest text-gray-400 font-bold">Pengetahuan Lokal</div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="text-yellow-400 font-bebas text-4xl mb-1">∞</div>
+                        <div class="text-xs uppercase tracking-widest text-gray-400 font-bold">Energi Positif</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- CERTIFICATION & SAFETY SECTION -->
+    <section class="w-full bg-[#f4f8fa] text-[#093C5D] py-24 overflow-hidden border-t-8 border-yellow-400">
+        <div class="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 flex flex-col md:flex-row-reverse items-center gap-12 lg:gap-20">
+            
+            <!-- CERTIFICATE IMAGE -->
+            <div class="w-full md:w-1/2 relative group mt-8 md:mt-0">
+                <div class="absolute inset-0 bg-[#093C5D] translate-x-4 translate-y-4 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                <div class="relative z-10 bg-white p-2 shadow-xl">
+                    <Image 
+                        src={sertiImage} 
+                        alt="Sertifikasi Lifeguard" 
+                        class="w-full h-auto object-contain border border-gray-200"
+                    />
+                </div>
+                
+                <!-- BADGE TEKS KIRI BAWAH (Kotak Putih, Miring) -->
+                <div class="absolute -bottom-5 -left-4 md:-bottom-8 md:-left-8 z-20 bg-white text-[#093C5D] font-bebas text-2xl md:text-3xl px-6 py-3 shadow-xl transform -rotate-3">
+                    <span class="tracking-wide uppercase">Pelatih Pro Tersertifikasi</span>
+                </div>
+
+                <!-- LOGO KANAN BAWAH (Nongol, Background Bulat, Miring) -->
+                <div class="absolute -bottom-6 -right-4 md:-bottom-10 md:-right-8 z-30 bg-white rounded-full p-2 md:p-3 shadow-xl transform rotate-12 transition-transform duration-300 hover:rotate-0">
+                    <Image src={logoImage} alt="Backwash Logo" class="w-12 h-12 md:w-16 md:h-16 object-contain" />
+                </div>
+            </div>
+
+            <!-- SAFETY TEXT -->
+            <div class="w-full md:w-1/2 flex flex-col justify-center">
+                <div class="flex items-center gap-3 mb-4">
+                    <svg class="w-8 h-8 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    <h3 class="text-yellow-600 font-bold uppercase tracking-widest text-sm md:text-base">Keselamatan Nomor Satu</h3>
+                </div>
+                
+                <h2 class="text-5xl md:text-6xl font-bebas font-bold uppercase mb-6 tracking-wide text-[#093C5D]">
+                    Lifeguard & Pelatih Profesional
+                </h2>
+                
+                <div class="space-y-4 font-sans text-base md:text-lg leading-relaxed text-gray-600">
+                    <p>
+                        Bersenang-senang di air dimulai dengan mengetahui bahwa Anda berada di tangan yang aman. Dama adalah Lifeguard dan First Responder bersertifikat penuh, terlatih dalam penyelamatan air profesional dan CPR.
+                    </p>
+                    <p>
+                        Kami sangat mematuhi protokol keselamatan internasional. Setiap sesi mencakup pengarahan keselamatan komprehensif, analisis arus, dan pengawasan ketat. Anda bisa sepenuhnya fokus menangkap ombak terbaik dalam hidup Anda, dengan tenang mengetahui instruktur Anda sangat terlatih untuk situasi apa pun.
+                    </p>
+                </div>
+
+                <div class="mt-8">
+                    <a href="/classes" class="inline-flex items-center gap-3 bg-[#093C5D] text-white px-8 py-4 font-bebas text-2xl tracking-wider hover:bg-yellow-400 hover:text-[#093C5D] transition-colors duration-300 shadow-md">
+                        <span>Lihat Kelas Kami</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</Layout>

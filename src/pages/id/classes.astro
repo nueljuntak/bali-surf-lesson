@@ -1,0 +1,140 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ClassAccordion from "../../components/ClassAccordion.astro";
+
+import foto6Image from "../../assets/foto6.jpeg";
+import foto1Image from "../../assets/foto1.jpeg";
+import foto5Image from "../../assets/foto5.jpeg";
+import foto10Image from "../../assets/foto10.jpeg";
+
+const waLink = "https://wa.me/6282323128661";
+
+const classesData = [
+    {
+        title: "KURSUS PRIVAT (PELATIHAN 1-LAWAN-1)",
+        image: foto6Image,
+        description: "Dapatkan pelatihan personal yang disesuaikan dengan tingkat kemampuan Anda. Baik Anda pemula atau ingin meningkatkan teknik, Anda akan berkembang lebih cepat dengan perhatian penuh 1-lawan-1.",
+        pricing: [
+            { sessions: "1 Pelajaran", duration: "2 jam", priceIDR: "500K IDR", priceUSD: "$27.5 USD", desc: "Pengenalan sempurna untuk berselancar atau sesi yang difokuskan untuk meningkatkan keterampilan tertentu." },
+            { sessions: "3 Pelajaran", duration: "3 sesi", priceIDR: "1.400K IDR", priceUSD: "$77 USD", desc: "Ideal jika Anda ingin membangun kepercayaan diri, berkembang secara konsisten, dan menghabiskan lebih banyak waktu di air." },
+            { sessions: "5 Pelajaran", duration: "5 sesi", priceIDR: "2.250K IDR", priceUSD: "$124 USD", desc: "Pilihan terbaik bagi peselancar yang ingin berkembang cepat dan membangun dasar yang kuat." }
+        ],
+        included: ["Instruktur selancar profesional", "Teori & pengarahan keselamatan", "Papan selancar & Pakaian Renang (Rashguard)", "Air minum", "Pengawasan Lifeguard", "Pemanasan di pantai", "Umpan balik personal"],
+        whoIsItFor: ["Peselancar pemula", "Pemula & menengah", "Pelancong solo", "Siapa saja yang ingin cepat mahir"],
+        whatToBring: ["Pakaian renang", "Handuk", "Tabir surya", "Energi positif!"]
+    },
+    {
+        title: "SEMI PRIVAT (2 ORANG)",
+        image: foto1Image,
+        description: "Berbagi keseruan dengan teman atau pasangan! Keseimbangan yang luar biasa antara instruksi personal dan kesenangan bersama di air. Cocok untuk pasangan atau teman berselancar.",
+        pricing: [
+            { sessions: "1 Pelajaran", duration: "2 jam", priceIDR: "400K IDR / orang", priceUSD: "$22 USD / orang", desc: "Tangkap ombak pertama Anda bersama dan nikmati pengalaman berbagi yang menyenangkan." },
+            { sessions: "3 Pelajaran", duration: "3 sesi", priceIDR: "1.100K IDR / orang", priceUSD: "$60 USD / orang", desc: "Bangun kerja sama tim dan konsistensi sambil saling menyemangati." },
+            { sessions: "5 Pelajaran", duration: "5 sesi", priceIDR: "1.800K IDR / orang", priceUSD: "$99 USD / orang", desc: "Kuasai dasar-dasarnya bersama dengan sesi komprehensif selama beberapa hari." }
+        ],
+        included: ["1 Pelatih profesional untuk 2 orang", "Teori & pengarahan keselamatan", "Papan selancar & Pakaian Renang (Rashguard)", "Air minum", "Pengawasan Lifeguard", "Pemanasan di pantai", "Umpan balik bersama"],
+        whoIsItFor: ["Pasangan", "Teman seperjalanan", "Saudara", "Pemula yang ingin belajar bersama"],
+        whatToBring: ["Pakaian renang", "Handuk", "Tabir surya", "Energi positif!"]
+    },
+    {
+        title: "KURSUS GRUP (4-8 ORANG)",
+        image: foto5Image,
+        description: "Bergabunglah dalam sesi selancar yang menyenangkan dan interaktif bersama grup kecil. Sangat cocok untuk pelancong, keluarga, atau teman yang ingin menangkap ombak bersama sambil tetap mendapatkan bimbingan.",
+        pricing: [
+            { sessions: "1 Pelajaran", duration: "2 jam", priceIDR: "350K IDR / orang", priceUSD: "$19.25 USD / orang", desc: "Pengenalan selancar yang menyenangkan dan interaktif dengan sesama pelancong." },
+            { sessions: "3 Pelajaran", duration: "3 sesi", priceIDR: "950K IDR / orang", priceUSD: "$52 USD / orang", desc: "Nikmati latihan konsisten dan dapatkan teman baru di air." },
+            { sessions: "5 Pelajaran", duration: "5 sesi", priceIDR: "1.500K IDR / orang", priceUSD: "$82.5 USD / orang", desc: "Kembangkan keterampilan selama seminggu dengan suasana grup yang saling mendukung." }
+        ],
+        included: ["Instruktur selancar profesional (Rasio 1:4)", "Teori & pengarahan keselamatan grup", "Papan selancar & Pakaian Renang (Rashguard)", "Air minum", "Pengawasan Lifeguard", "Pemanasan di pantai"],
+        whoIsItFor: ["Keluarga", "Backpacker & pelancong solo", "Rombongan teman", "Pemula dengan budget hemat"],
+        whatToBring: ["Pakaian renang", "Handuk", "Tabir surya", "Energi positif!"]
+    },
+    {
+        title: "PAKET SELANCAR 7 HARI",
+        image: foto10Image,
+        description: "Rasakan gaya hidup berselancar sepenuhnya! Paket 7 hari komprehensif ini dirancang untuk meningkatkan keterampilan Anda ke level berikutnya dengan latihan harian yang konsisten dan analisis pembacaan ombak.",
+        pricing: [
+            { sessions: "Paket Lengkap", duration: "7 Hari", priceIDR: "3.000K IDR", priceUSD: "$165 USD", desc: "Pengalaman kamp selancar terbaik tanpa akomodasi. Pelatihan intensif harian." }
+        ],
+        included: ["Sesi selancar harian", "Teori tingkat lanjut & pembacaan ombak", "Analisis video (Opsional/Tambahan)", "Papan selancar & Pakaian Renang (Rashguard)", "Air minum", "Umpan balik personal mendalam"],
+        whoIsItFor: ["Pemula yang berdedikasi", "Peselancar menengah yang ingin naik level", "Pelancong liburan jangka panjang"],
+        whatToBring: ["Pakaian renang", "Handuk", "Tabir surya", "Zink", "Energi positif!"]
+    }
+];
+---
+
+<Layout title="Kelas - Backwash Surf Bali">
+    <main class="font-sans pt-32 bg-[#093C5D] min-h-screen flex flex-col">
+        
+        <!-- HEADER PAGE -->
+        <div class="text-center mb-16 px-6">
+            <h1 class="text-6xl md:text-8xl font-bebas font-bold text-white uppercase tracking-wider mb-4 drop-shadow-md">
+                Kelas Selancar Kami
+            </h1>
+            <p class="text-gray-200 max-w-xl mx-auto text-base md:text-lg">
+                Pilih paket terbaik untuk tingkat pengalaman Anda. Klik pada setiap kelas untuk melihat harga dan detailnya!
+            </p>
+        </div>
+
+        <!-- ACCORDION CLASSES LIST -->
+        <section id="classes-list" class="w-full max-w-6xl mx-auto px-4 md:px-8 flex flex-col gap-6 flex-grow pb-24">
+            {classesData.map((cls) => (
+                <ClassAccordion 
+                    title={cls.title}
+                    image={cls.image}
+                    description={cls.description}
+                    pricing={cls.pricing}
+                    included={cls.included}
+                    whoIsItFor={cls.whoIsItFor}
+                    whatToBring={cls.whatToBring}
+                    waLink={waLink}
+                />
+            ))}
+        </section>
+
+        <!-- HOW TO ORDER SECTION -->
+        <section class="w-full bg-[#f4f8fa] py-24 px-6 md:px-12">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-5xl md:text-6xl font-bebas font-bold text-[#093C5D] uppercase tracking-wider mb-12">
+                    Cara Memesan
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-left">
+                    <div class="bg-white p-8 border border-gray-200 shadow-md">
+                        <div class="text-[#2E6FA0] font-bebas text-6xl mb-4">01</div>
+                        <h3 class="text-2xl font-bold font-bebas text-slate-900 mb-3 tracking-wide uppercase">Pilih Kelas Anda</h3>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                            Jelajahi paket selancar kami di atas. Apakah Anda menginginkan sesi privat atau pelajaran kelompok yang menyenangkan, pilih yang sesuai dengan suasana dan tingkat keahlian Anda.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 border border-gray-200 shadow-md">
+                        <div class="text-[#2E6FA0] font-bebas text-6xl mb-4">02</div>
+                        <h3 class="text-2xl font-bold font-bebas text-slate-900 mb-3 tracking-wide uppercase">Pesan & Booking</h3>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                            Klik tombol "Pesan Kelas Ini" untuk mengamankan tempat Anda melalui WhatsApp secara mudah, atau hubungi kami langsung jika Anda memiliki pertanyaan sebelum memesan.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 border border-gray-200 shadow-md">
+                        <div class="text-[#2E6FA0] font-bebas text-6xl mb-4">03</div>
+                        <h3 class="text-2xl font-bold font-bebas text-slate-900 mb-3 tracking-wide uppercase">Bersiap Berselancar</h3>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                            Setelah jadwal Anda dikonfirmasi oleh tim kami, cukup siapkan tabir surya dan bawa energi positif Anda. Kami akan menemui Anda di pantai!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <a href="https://wa.me/6282323128661" target="_blank" class="inline-block bg-[#093C5D] text-white px-10 py-4 font-bebas text-2xl tracking-wider hover:bg-yellow-400 hover:text-slate-900 transition-colors duration-300 shadow-md w-full sm:w-auto">
+                        Konsultasi via WhatsApp
+                    </a>
+                    <a href="#classes-list" class="inline-block bg-white text-[#093C5D] border-2 border-[#093C5D] px-10 py-4 font-bebas text-2xl tracking-wider hover:bg-gray-50 transition-colors duration-300 shadow-md w-full sm:w-auto">
+                        Lihat Kelas Lagi
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+</Layout>

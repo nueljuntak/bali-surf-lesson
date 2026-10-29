@@ -1,0 +1,365 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import sampulImage from "../assets/sampul.jpeg";
+
+// Import aset untuk section classes
+import foto6Image from "../assets/foto6.jpeg";
+import foto1Image from "../assets/foto1.jpeg";
+import foto5Image from "../assets/foto5.jpeg";
+import foto10Image from "../assets/foto10.jpeg";
+import owner3Image from "../assets/owner3.jpeg";
+import owner4Image from "../assets/owner4.jpeg";
+import foto4Image from "../assets/foto4.jpeg";
+import foto8Image from "../assets/foto8.jpeg";
+
+// IMPORT VIDEO FOOTAGE
+import video1 from "../assets/video1.mp4";
+import video2 from "../assets/video2.mp4";
+import video3 from "../assets/video3.mp4";
+import video4 from "../assets/video4.mp4";
+import video5 from "../assets/video5.mp4";
+import video6 from "../assets/video6.mp4";
+
+import ClassPackage from "../components/ClassPackage.astro";
+
+const waLink = "https://wa.me/6282323128661";
+
+const socialVideos = [video1, video2, video3, video4, video5, video6];
+---
+
+<Layout title="Backwash Surf Bali">
+    <main class="font-sans">
+        <!-- HERO SECTION -->
+        <section id="home" class="relative w-full h-screen overflow-hidden">
+            <Image
+                src={sampulImage}
+                alt="Backwash Surf Bali Surfer"
+                class="absolute inset-0 w-full h-full object-cover z-0"
+            />
+            <div
+                class="absolute inset-0 bg-black/10 bg-gradient-to-t from-black/60 via-black/10 to-transparent z-10"
+            >
+            </div>
+            <div
+                class="relative z-30 w-full h-full px-6 md:px-20 pb-20 md:pb-32 flex flex-col justify-end items-end"
+            >
+                <div class="max-w-xl text-right">
+                    <h1
+                        class="text-6xl md:text-7xl font-bebas font-bold text-white uppercase tracking-wider mb-4 drop-shadow-md"
+                    >
+                        Backwash Surf Bali
+                    </h1>
+                    <p
+                        class="text-sm md:text-base text-gray-200 leading-normal mb-5 drop-shadow-sm"
+                    >
+                        Hi, I'm Dama Indra the founder of Backwash Surf Bali. I
+                        grew up in a small fishing village where the ocean has
+                        been part of my life since childhood. After years of
+                        teaching surf lessons across Indonesia, I now share my
+                        passion here in Bali. Whether you're a beginner or
+                        looking to improve, I'm here to give you a safe, fun,
+                        and authentic surfing experience.
+                    </p>
+                    <a
+                        href="/about"
+                        class="inline-block text-white font-bebas text-xl md:text-2xl tracking-wider hover:text-yellow-400 transition-colors duration-300 drop-shadow-sm"
+                    >
+                        Find out more about me! <span class="ml-1">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION MARQUEE 1 -->
+        <div
+            class="bg-teal-500 py-3 overflow-hidden flex whitespace-nowrap items-center w-full"
+        >
+            <div
+                class="animate-marquee flex whitespace-nowrap text-slate-900 text-3xl md:text-4xl font-handwritten"
+            >
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+            </div>
+        </div>
+
+        <!-- SECTION KELAS (CLASSES) -->
+        <section id="classes" class="w-full flex flex-col">
+            <ClassPackage
+                imageSrc={foto6Image}
+                imageAlt="Private Surf Lesson Coaching"
+                title="PRIVATE LESSONS (1-ON-1 COACHING)"
+                price="From IDR. 500,000 / $27,5 USD"
+                description="Get personalised coaching tailored to your skill level with a private lesson. Whether you're a first-timer or looking to improve technique, you'll progress faster with focused attention from your instructor."
+                bookingLink={waLink}
+                textPosition="left"
+            />
+
+            <ClassPackage
+                imageSrc={foto1Image}
+                imageAlt="Semi Private Surf Lesson"
+                title="SEMI PRIVATE (2 PEOPLE)"
+                price="From IDR. 400,000 / $22 USD per person"
+                description="Share the stoke with a friend or partner! Our semi-private lessons offer a great balance of personalised instruction and shared fun in the water. Perfect for couples or surf buddies."
+                bookingLink={waLink}
+                textPosition="right"
+            />
+
+            <ClassPackage
+                imageSrc={foto5Image}
+                imageAlt="Group Surf Lesson"
+                title="GROUP LESSONS (4-8 PEOPLE)"
+                price="From IDR. 350,000 / $19,25 USD per person"
+                description="Join a fun and social surf session with a small group. Great for travellers, families, or friends wanting to catch waves together while still getting guidance. These lessons are subject to group availability."
+                bookingLink={waLink}
+                textPosition="left"
+            />
+
+            <ClassPackage
+                imageSrc={foto10Image}
+                imageAlt="7 Days Surf Package"
+                title="7 DAYS SURF PACKAGE"
+                price="From IDR. 3,000,000 / $165 USD"
+                description="Fully immerse yourself in the surfing lifestyle! This comprehensive 7-day package is designed to take your skills to the next level with consistent daily practice, theory sessions, and wave reading analysis."
+                bookingLink={waLink}
+                textPosition="right"
+            />
+        </section>
+
+        <!-- SECTION MARQUEE KE-2 -->
+        <div class="bg-teal-500 py-3 overflow-hidden flex whitespace-nowrap items-center w-full">
+            <div class="animate-marquee flex whitespace-nowrap text-slate-900 text-3xl md:text-4xl font-handwritten">
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+                <span class="mx-6">Ride Your Own Wave.</span>
+            </div>
+        </div>
+
+        <!-- SECTION INSTRUCTORS -->
+        <section id="instructors-title" class="w-full pt-20 md:pt-32 pb-10 bg-white flex flex-col md:flex-row">
+            <div class="w-full md:w-1/2 flex flex-col justify-center items-center px-6 md:px-12 lg:px-16">
+                <h2 class="text-[5rem] md:text-[7rem] lg:text-[9rem] xl:text-[11rem] leading-[0.9] tracking-tight font-bebas font-bold text-[#2E6FA0] text-right uppercase w-full max-w-2xl">
+                    Meet<br/>Your<br/>Instructors
+                </h2>
+            </div>
+            <div class="w-full md:w-1/2 hidden md:block"></div>
+        </section>
+        
+        <section id="instructors-profile" class="w-full bg-white pb-32">
+            <div class="w-full flex flex-col md:flex-row gap-10 md:gap-16 px-6 md:px-12 lg:px-16">
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div class="w-full max-w-md lg:max-w-lg">
+                        <Image 
+                        src={owner4Image} 
+                        alt="Dama Indra - Surf Instructor" 
+                        class="w-full h-auto object-cover"
+                        />
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2 flex flex-col justify-center max-w-xl">
+                    <h3 class="text-6xl md:text-7xl font-bebas font-bold text-[#2E6FA0] uppercase mb-6 tracking-wide">
+                        Dama Indra
+                    </h3>
+                    <p class="font-sans text-sm md:text-base leading-relaxed mb-4 text-gray-600">
+                        Hi, I'm Dama Indra. I grew up in a small fishing village where the ocean shaped every part of my childhood, and I've been surfing for as long as I can remember. Surfing has always been more than just a sport to me - it's my passion, my lifestyle, and my way of connecting with people.
+                    </p>
+                    <p class="font-sans text-sm md:text-base leading-relaxed mb-8 text-gray-600">
+                        After years of teaching across Indonesia, I made Bali my home. Now, I get to share this love of the waves with people from all over the world. Backwash Surf Bali is my way of opening up the ocean to anyone who wants to learn, to play, and to experience the magic of riding a wave.
+                    </p>
+                    <div>
+                        <a href="/about" class="inline-block bg-[#444C5C] text-white px-8 py-3 font-sans font-semibold text-sm hover:bg-[#2E6FA0] transition-colors duration-300">
+                            Find out more about me!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION ABOUT / MISSION -->
+        <section id="about" class="w-full bg-white pt-24 pb-0 flex flex-col items-center">
+            <div class="w-full flex flex-col items-center text-center px-8 md:px-20 mb-16">
+                <h2 class="text-5xl md:text-6xl font-playfair italic font-bold mb-6 leading-tight text-[#2E6FA0]">
+                    Good Waves,<br class="md:hidden"/> Good Vibes
+                </h2>
+                <p class="font-sans text-sm md:text-base leading-relaxed max-w-2xl text-gray-600 uppercase font-semibold tracking-wider">
+                    Our mission is to share the joy of surfing with everyone, in a safe, fun and unforgettable experience.
+                </p>
+            </div>
+
+            <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-0">
+                <div class="w-full aspect-[4/3] md:aspect-square overflow-hidden">
+                    <Image src={foto4Image} alt="Backwash Surf Vibe 1" class="w-full h-full object-cover" />
+                </div>
+                <div class="w-full aspect-[4/3] md:aspect-square overflow-hidden">
+                    <Image src={owner3Image} alt="Backwash Surf Vibe 2" class="w-full h-full object-cover" />
+                </div>
+                <div class="w-full aspect-[4/3] md:aspect-square overflow-hidden">
+                    <Image src={foto8Image} alt="Backwash Surf Vibe 3" class="w-full h-full object-cover" />
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION LOCATION -->
+        <section id="location" class="w-full bg-[#f4f8fa] py-24 px-6 md:px-12 lg:px-16 flex flex-col items-center text-center">
+            <h2 class="text-6xl md:text-7xl font-bebas font-bold text-[#2E6FA0] uppercase mb-4 tracking-wider">
+                Where to Find Us
+            </h2>
+            <p class="font-sans text-sm md:text-base leading-relaxed mb-10 text-gray-600 max-w-2xl">
+                We are based in the heart of Canggu's surf scene. Come drop by, say hi, and let's catch some waves together at <strong class="text-[#444C5C]">Pantai Batu Bolong, Canggu, Bali</strong>.
+            </p>
+            
+            <div class="w-full max-w-5xl aspect-video md:aspect-[21/9] bg-gray-200 relative shadow-xl border-8 border-white overflow-hidden group">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15777.72898748154!2d115.1221768406733!3d-8.651717325603784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2475988e0c3b9%3A0xeab5edb2f29b4e54!2sBatu%20Bolong%20Beach!5e0!3m2!1sen!2sid!4v1715000000000!5m2!1sen!2sid" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="absolute inset-0 w-full h-full object-cover"
+                ></iframe>
+                
+                <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                    <a href="https://www.google.com/maps/place/Batu+Bolong+Beach,+Canggu,+Bali/" target="_blank" class="inline-block bg-[#444C5C] text-white px-8 py-3 font-sans font-semibold text-sm hover:bg-[#2E6FA0] shadow-md transition-colors duration-300">
+                        Open in Maps
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION SOCIALS / FOOTAGE -->
+        <section id="socials" class="w-full bg-[#093C5D] py-20 flex flex-col items-center overflow-hidden">
+            <h2 class="text-5xl md:text-6xl font-bebas font-bold text-white uppercase mb-10 tracking-wider">
+                SOCIALS
+            </h2>
+            
+            <div class="w-full max-w-[1200px] px-6 mx-auto">
+                <div class="flex overflow-x-auto gap-4 pb-8 snap-x snap-mandatory hide-scrollbar">
+                    {socialVideos.map((vid) => (
+                        <div class="flex-none w-[60%] md:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-4rem)/5)] aspect-[9/16] snap-center cursor-pointer rounded-lg overflow-hidden group bg-black relative shadow-xl border border-gray-700/50">
+                            <video 
+                                src={vid} 
+                                class="preview-video w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                                muted 
+                                playsinline
+                            ></video>
+                            
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                                <div class="bg-white/20 backdrop-blur-sm p-4 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- MODAL VIDEO FULLSCREEN -->
+        <div id="video-modal" class="fixed inset-0 z-[100] bg-black/95 hidden flex-col items-center justify-center opacity-0 transition-opacity duration-300 backdrop-blur-sm">
+            <button id="close-modal" class="absolute top-6 right-6 md:top-10 md:right-10 text-white hover:text-gray-400 z-50 p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="relative w-full h-full max-h-screen py-10 md:py-16 px-4 flex justify-center items-center">
+                <video id="modal-video" class="h-full w-auto max-w-full rounded-lg shadow-2xl" controls playsinline></video>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    .animate-marquee {
+        animation: marquee 15s linear infinite;
+    }
+
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const previewVideos = document.querySelectorAll('.preview-video');
+        const modal = document.getElementById('video-modal');
+        const modalVideo = document.getElementById('modal-video') as HTMLVideoElement;
+        const closeModalBtn = document.getElementById('close-modal');
+
+        previewVideos.forEach((vid) => {
+            const video = vid as HTMLVideoElement;
+            
+            video.play().catch(err => console.log("Autoplay dicegah browser:", err));
+
+            video.addEventListener('timeupdate', () => {
+                if (video.currentTime >= 2) {
+                    video.currentTime = 0;
+                    video.play();
+                }
+            });
+
+            if (video.parentElement) {
+                video.parentElement.addEventListener('click', () => {
+                    const src = video.getAttribute('src');
+                    if(src) {
+                        modalVideo.src = src;
+                        modal?.classList.remove('hidden');
+                        setTimeout(() => {
+                            modal?.classList.remove('opacity-0');
+                        }, 10);
+                        modalVideo.currentTime = 0;
+                        modalVideo.muted = false;
+                        modalVideo.play();
+                    }
+                });
+            }
+        });
+
+        const closeModal = () => {
+            modal?.classList.add('opacity-0');
+            setTimeout(() => {
+                modal?.classList.add('hidden');
+                modalVideo.pause();
+                modalVideo.src = ''; 
+            }, 300);
+        };
+
+        closeModalBtn?.addEventListener('click', closeModal);
+        modal?.addEventListener('click', (e) => {
+            if(e.target === modal) closeModal(); 
+        });
+    });
+</script>

@@ -1,0 +1,141 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ClassAccordion from "../components/ClassAccordion.astro";
+
+import foto6Image from "../assets/foto6.jpeg";
+import foto1Image from "../assets/foto1.jpeg";
+import foto5Image from "../assets/foto5.jpeg";
+import foto10Image from "../assets/foto10.jpeg";
+
+const waLink = "https://wa.me/6282323128661";
+
+// PERUBAHAN: Menyesuaikan pricing object menjadi priceIDR dan priceUSD
+const classesData = [
+    {
+        title: "PRIVATE LESSONS (1-ON-1 COACHING)",
+        image: foto6Image,
+        description: "Get personalised coaching tailored to your skill level. Whether you're a first-timer or looking to improve technique, you'll progress faster with focused 1-on-1 attention.",
+        pricing: [
+            { sessions: "1 Lesson", duration: "2 hours", priceIDR: "500K IDR", priceUSD: "$27.5 USD", desc: "A perfect introduction to surfing or a focused session to improve specific skills." },
+            { sessions: "3 Lessons", duration: "3 sessions", priceIDR: "1.400K IDR", priceUSD: "$77 USD", desc: "Ideal if you want to build confidence, improve consistently, and spend more time in the water." },
+            { sessions: "5 Lessons", duration: "5 sessions", priceIDR: "2.250K IDR", priceUSD: "$124 USD", desc: "The best choice for surfers who want to progress quickly and develop strong fundamentals." }
+        ],
+        included: ["Professional surf instructor", "Theory & safety briefing", "Surfboard & Rashguard", "Drinking water", "Lifeguard supervision", "Beach warm-up", "Personal feedback"],
+        whoIsItFor: ["First-time surfers", "Beginners & intermediate", "Solo travellers", "Anyone looking for fast progress"],
+        whatToBring: ["Swimwear", "Towel", "Sunscreen", "Positive energy!"]
+    },
+    {
+        title: "SEMI PRIVATE (2 PEOPLE)",
+        image: foto1Image,
+        description: "Share the stoke with a friend or partner! A great balance of personalised instruction and shared fun in the water. Perfect for couples or surf buddies.",
+        pricing: [
+            { sessions: "1 Lesson", duration: "2 hours", priceIDR: "400K IDR / pax", priceUSD: "$22 USD / pax", desc: "Catch your first waves together and enjoy a fun shared experience." },
+            { sessions: "3 Lessons", duration: "3 sessions", priceIDR: "1.100K IDR / pax", priceUSD: "$60 USD / pax", desc: "Build teamwork and consistency while cheering each other on." },
+            { sessions: "5 Lessons", duration: "5 sessions", priceIDR: "1.800K IDR / pax", priceUSD: "$99 USD / pax", desc: "Master the basics together with comprehensive multi-day sessions." }
+        ],
+        included: ["1 Professional coach for 2 people", "Theory & safety briefing", "Surfboard & Rashguard", "Drinking water", "Lifeguard supervision", "Beach warm-up", "Shared feedback"],
+        whoIsItFor: ["Couples", "Friends travelling together", "Siblings", "Beginners looking for shared fun"],
+        whatToBring: ["Swimwear", "Towel", "Sunscreen", "Positive energy!"]
+    },
+    {
+        title: "GROUP LESSONS (4-8 PEOPLE)",
+        image: foto5Image,
+        description: "Join a fun and social surf session with a small group. Great for travellers, families, or friends wanting to catch waves together while still getting guidance.",
+        pricing: [
+            { sessions: "1 Lesson", duration: "2 hours", priceIDR: "350K IDR / pax", priceUSD: "$19.25 USD / pax", desc: "A fun, social introduction to surfing with fellow travellers." },
+            { sessions: "3 Lessons", duration: "3 sessions", priceIDR: "950K IDR / pax", priceUSD: "$52 USD / pax", desc: "Enjoy consistent practice and make new friends in the water." },
+            { sessions: "5 Lessons", duration: "5 sessions", priceIDR: "1.500K IDR / pax", priceUSD: "$82.5 USD / pax", desc: "Develop skills over a week with a supportive group atmosphere." }
+        ],
+        included: ["Professional surf instructors (Ratio 1:4)", "Theory & group safety briefing", "Surfboard & Rashguard", "Drinking water", "Lifeguard supervision", "Beach warm-up"],
+        whoIsItFor: ["Families", "Backpackers & solo travellers", "Groups of friends", "Budget-conscious beginners"],
+        whatToBring: ["Swimwear", "Towel", "Sunscreen", "Positive energy!"]
+    },
+    {
+        title: "7 DAYS SURF PACKAGE",
+        image: foto10Image,
+        description: "Fully immerse yourself in the surfing lifestyle! This comprehensive 7-day package is designed to take your skills to the next level with consistent daily practice and wave reading analysis.",
+        pricing: [
+            { sessions: "Full Package", duration: "7 Days", priceIDR: "3.000K IDR", priceUSD: "$165 USD", desc: "The ultimate surf camp experience without the accommodation. Daily intensive coaching." }
+        ],
+        included: ["Daily surf sessions", "Advanced theory & wave reading", "Video analysis (Optional/Add-on)", "Surfboard & Rashguard", "Drinking water", "Deep personal feedback"],
+        whoIsItFor: ["Dedicated beginners", "Intermediate surfers aiming high", "Long-term holiday makers"],
+        whatToBring: ["Swimwear", "Towel", "Sunscreen", "Zinc", "Positive energy!"]
+    }
+];
+---
+
+<Layout title="Classes - Backwash Surf Bali">
+    <main class="font-sans pt-32 bg-[#093C5D] min-h-screen flex flex-col">
+        
+        <!-- HEADER PAGE -->
+        <div class="text-center mb-16 px-6">
+            <h1 class="text-6xl md:text-8xl font-bebas font-bold text-white uppercase tracking-wider mb-4 drop-shadow-md">
+                Our Surf Classes
+            </h1>
+            <p class="text-gray-200 max-w-xl mx-auto text-base md:text-lg">
+                Choose the best package for your experience level. Click on each class to view pricing and details!
+            </p>
+        </div>
+
+        <!-- ACCORDION CLASSES LIST -->
+        <section id="classes-list" class="w-full max-w-6xl mx-auto px-4 md:px-8 flex flex-col gap-6 flex-grow pb-24">
+            {classesData.map((cls) => (
+                <ClassAccordion 
+                    title={cls.title}
+                    image={cls.image}
+                    description={cls.description}
+                    pricing={cls.pricing}
+                    included={cls.included}
+                    whoIsItFor={cls.whoIsItFor}
+                    whatToBring={cls.whatToBring}
+                    waLink={waLink}
+                />
+            ))}
+        </section>
+
+        <!-- HOW TO ORDER SECTION -->
+        <section class="w-full bg-[#f4f8fa] py-24 px-6 md:px-12">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-5xl md:text-6xl font-bebas font-bold text-[#093C5D] uppercase tracking-wider mb-12">
+                    How To Order
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-left">
+                    <div class="bg-white p-8 border border-gray-200 shadow-md">
+                        <div class="text-[#2E6FA0] font-bebas text-6xl mb-4">01</div>
+                        <h3 class="text-2xl font-bold font-bebas text-slate-900 mb-3 tracking-wide uppercase">Pick Your Class</h3>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                            Explore our surf packages above. Whether you want a private session or a fun group lesson, choose the one that fits your vibe and skill level.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 border border-gray-200 shadow-md">
+                        <div class="text-[#2E6FA0] font-bebas text-6xl mb-4">02</div>
+                        <h3 class="text-2xl font-bold font-bebas text-slate-900 mb-3 tracking-wide uppercase">Message & Book</h3>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                            Click the "Book This Class" button to securely lock in your spot via WhatsApp, or contact us directly if you have any questions before booking.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 border border-gray-200 shadow-md">
+                        <div class="text-[#2E6FA0] font-bebas text-6xl mb-4">03</div>
+                        <h3 class="text-2xl font-bold font-bebas text-slate-900 mb-3 tracking-wide uppercase">Get Ready to Surf</h3>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                            Once your availability is confirmed by our team, just pack your sunscreen and bring your positive energy. We'll meet you at the beach!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <a href="https://wa.me/6282323128661" target="_blank" class="inline-block bg-[#093C5D] text-white px-10 py-4 font-bebas text-2xl tracking-wider hover:bg-yellow-400 hover:text-slate-900 transition-colors duration-300 shadow-md w-full sm:w-auto">
+                        Just Consult via WhatsApp
+                    </a>
+                    <a href="#classes-list" class="inline-block bg-white text-[#093C5D] border-2 border-[#093C5D] px-10 py-4 font-bebas text-2xl tracking-wider hover:bg-gray-50 transition-colors duration-300 shadow-md w-full sm:w-auto">
+                        Browse Classes Again
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+</Layout>
