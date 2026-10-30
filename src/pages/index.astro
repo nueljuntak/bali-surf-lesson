@@ -93,44 +93,44 @@ const socialVideos = [video1, video2, video3, video4, video5, video6];
             </div>
         </div>
 
-        <!-- SECTION KELAS (CLASSES) -->
+       <!-- SECTION KELAS (CLASSES) -->
         <section id="classes" class="w-full flex flex-col">
             <ClassPackage
                 imageSrc={foto6Image}
-                imageAlt="Private Surf Lesson Coaching"
-                title="PRIVATE LESSONS (1-ON-1 COACHING)"
-                price="From IDR. 500,000 / $27,5 USD"
-                description="Get personalised coaching tailored to your skill level with a private lesson. Whether you're a first-timer or looking to improve technique, you'll progress faster with focused attention from your instructor."
-                bookingLink={waLink}
-                textPosition="left"
-            />
-
-            <ClassPackage
-                imageSrc={foto1Image}
-                imageAlt="Semi Private Surf Lesson"
-                title="SEMI PRIVATE (2 PEOPLE)"
-                price="From IDR. 400,000 / $22 USD per person"
-                description="Share the stoke with a friend or partner! Our semi-private lessons offer a great balance of personalised instruction and shared fun in the water. Perfect for couples or surf buddies."
-                bookingLink={waLink}
-                textPosition="right"
-            />
-
-            <ClassPackage
-                imageSrc={foto5Image}
-                imageAlt="Group Surf Lesson"
-                title="GROUP LESSONS (4-8 PEOPLE)"
-                price="From IDR. 350,000 / $19,25 USD per person"
-                description="Join a fun and social surf session with a small group. Great for travellers, families, or friends wanting to catch waves together while still getting guidance. These lessons are subject to group availability."
+                imageAlt="Private Surf Lesson Beginner"
+                title="PRIVATE LESSON (BEGINNER)"
+                price="Start From IDR 450,000 / Session"
+                description="Perfect for first-timers. Get 1-on-1 attention to build your confidence, learn the basics, and catch your first waves safely."
                 bookingLink={waLink}
                 textPosition="left"
             />
 
             <ClassPackage
                 imageSrc={foto10Image}
-                imageAlt="7 Days Surf Package"
-                title="7 DAYS SURF PACKAGE"
-                price="From IDR. 3,000,000 / $165 USD"
-                description="Fully immerse yourself in the surfing lifestyle! This comprehensive 7-day package is designed to take your skills to the next level with consistent daily practice, theory sessions, and wave reading analysis."
+                imageAlt="Private Surf Lesson Intermediate"
+                title="PRIVATE LESSON (INTERMEDIATE)"
+                price="Start From IDR 450,000 / Session"
+                description="Already know the basics? This 1-on-1 session focuses on improving your paddling, wave reading, turning, and overall technique."
+                bookingLink={waLink}
+                textPosition="right"
+            />
+
+            <ClassPackage
+                imageSrc={foto1Image}
+                imageAlt="Shared Surf Lesson"
+                title="SHARED LESSON (2 PEOPLE)"
+                price="Start From IDR 750,000 / Session"
+                description="Share the stoke with your partner or best friend! A fun, shared experience with personalized guidance from one instructor."
+                bookingLink={waLink}
+                textPosition="left"
+            />
+
+            <ClassPackage
+                imageSrc={foto5Image}
+                imageAlt="Shared Group Surf Lesson"
+                title="SHARED GROUP LESSON"
+                price="Start From IDR 750,000 / Session"
+                description="Traveling with a group or family? Catch waves together in a fun, safe, and social environment with our experienced instructors."
                 bookingLink={waLink}
                 textPosition="right"
             />
@@ -257,7 +257,7 @@ const socialVideos = [video1, video2, video3, video4, video5, video6];
             <div class="w-full max-w-[1200px] px-6 mx-auto">
                 <div class="flex overflow-x-auto gap-4 pb-8 snap-x snap-mandatory hide-scrollbar">
                     {socialVideos.map((vid) => (
-                        <div class="flex-none w-[60%] md:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-4rem)/5)] aspect-[9/16] snap-center cursor-pointer rounded-lg overflow-hidden group bg-black relative shadow-xl border border-gray-700/50">
+                        <div class="flex-none w-[60%] md:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-5rem)/6)] aspect-[9/16] snap-center cursor-pointer rounded-lg overflow-hidden group bg-black relative shadow-xl border border-gray-700/50">
                             <video 
                                 src={vid} 
                                 class="preview-video w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"

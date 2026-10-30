@@ -93,43 +93,44 @@ const socialVideos = [video1, video2, video3, video4, video5, video6];
         </div>
 
         <!-- SECTION KELAS (CLASSES) -->
+        <!-- SECTION KELAS (CLASSES) -->
         <section id="classes" class="w-full flex flex-col">
             <ClassPackage
                 imageSrc={foto6Image}
-                imageAlt="Pelatihan Privat Selancar"
-                title="KURSUS PRIVAT (PELATIHAN 1-LAWAN-1)"
-                price="Mulai dari Rp 500.000 / $27,5 USD"
-                description="Dapatkan pelatihan personal yang disesuaikan dengan tingkat kemampuan Anda. Baik Anda pemula atau ingin meningkatkan teknik, Anda akan berkembang lebih cepat dengan perhatian penuh dari instruktur Anda."
-                bookingLink={waLink}
-                textPosition="left"
-            />
-
-            <ClassPackage
-                imageSrc={foto1Image}
-                imageAlt="Semi Privat Selancar"
-                title="SEMI PRIVAT (2 ORANG)"
-                price="Mulai dari Rp 400.000 / $22 USD per orang"
-                description="Berbagi keseruan dengan teman atau pasangan! Kursus semi-privat kami menawarkan keseimbangan yang luar biasa antara instruksi personal dan kesenangan bersama di air. Cocok untuk pasangan atau teman berselancar."
-                bookingLink={waLink}
-                textPosition="right"
-            />
-
-            <ClassPackage
-                imageSrc={foto5Image}
-                imageAlt="Grup Kelas Selancar"
-                title="KURSUS GRUP (4-8 ORANG)"
-                price="Mulai dari Rp 350.000 / $19,25 USD per orang"
-                description="Bergabunglah dalam sesi selancar yang menyenangkan dan interaktif bersama grup kecil. Sangat cocok untuk pelancong, keluarga, atau teman yang ingin menangkap ombak bersama sambil tetap mendapatkan bimbingan. Kelas ini bergantung pada ketersediaan grup."
+                imageAlt="Pelatihan Privat Selancar Pemula"
+                title="KURSUS PRIVAT (PEMULA)"
+                price="Mulai Dari Rp 450.000 / Sesi"
+                description="Sangat cocok untuk pemula yang baru pertama kali berselancar. Dapatkan perhatian penuh 1-lawan-1 untuk membangun kepercayaan diri, mempelajari dasar-dasar, dan berdiri di atas ombak pertama Anda dengan aman."
                 bookingLink={waLink}
                 textPosition="left"
             />
 
             <ClassPackage
                 imageSrc={foto10Image}
-                imageAlt="Paket Selancar 7 Hari"
-                title="PAKET SELANCAR 7 HARI"
-                price="Mulai dari Rp 3.000.000 / $165 USD"
-                description="Rasakan gaya hidup berselancar sepenuhnya! Paket 7 hari komprehensif ini dirancang untuk meningkatkan keterampilan Anda ke level berikutnya dengan latihan harian yang konsisten, sesi teori, dan analisis pembacaan ombak."
+                imageAlt="Pelatihan Privat Selancar Tingkat Menengah"
+                title="KURSUS PRIVAT (TINGKAT MENENGAH)"
+                price="Mulai Dari Rp 450.000 / Sesi"
+                description="Sudah menguasai dasar-dasarnya? Sesi privat 1-lawan-1 ini berfokus pada peningkatan teknik mendayung, membaca ombak, berbelok, dan memantapkan teknik berselancar Anda secara keseluruhan."
+                bookingLink={waLink}
+                textPosition="right"
+            />
+
+            <ClassPackage
+                imageSrc={foto1Image}
+                imageAlt="Kursus Bersama 2 Orang"
+                title="KURSUS BERSAMA (2 ORANG)"
+                price="Mulai Dari Rp 750.000 / Sesi"
+                description="Berbagi keseruan dengan pasangan atau sahabat terbaik Anda! Pengalaman belajar yang menyenangkan dan interaktif dengan bimbingan personal dari satu instruktur."
+                bookingLink={waLink}
+                textPosition="left"
+            />
+
+            <ClassPackage
+                imageSrc={foto5Image}
+                imageAlt="Kursus Bersama Grup"
+                title="KURSUS BERSAMA GRUP"
+                price="Mulai Dari Rp 750.000 / Sesi"
+                description="Liburan bersama rombongan teman atau keluarga? Tangkap ombak bersama dalam suasana yang menyenangkan, aman, dan ramah bersama instruktur berpengalaman kami."
                 bookingLink={waLink}
                 textPosition="right"
             />
@@ -256,7 +257,7 @@ const socialVideos = [video1, video2, video3, video4, video5, video6];
             <div class="w-full max-w-[1200px] px-6 mx-auto">
                 <div class="flex overflow-x-auto gap-4 pb-8 snap-x snap-mandatory hide-scrollbar">
                     {socialVideos.map((vid) => (
-                        <div class="flex-none w-[60%] md:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-4rem)/5)] aspect-[9/16] snap-center cursor-pointer rounded-lg overflow-hidden group bg-black relative shadow-xl border border-gray-700/50">
+                        <div class="flex-none w-[60%] md:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-5rem)/6)] aspect-[9/16] snap-center cursor-pointer rounded-lg overflow-hidden group bg-black relative shadow-xl border border-gray-700/50">
                             <video 
                                 src={vid} 
                                 class="preview-video w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"

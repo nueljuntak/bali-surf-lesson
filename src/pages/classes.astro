@@ -12,54 +12,48 @@ const waLink = "https://wa.me/6282323128661";
 // PERUBAHAN: Menyesuaikan pricing object menjadi priceIDR dan priceUSD
 const classesData = [
     {
-        title: "PRIVATE LESSONS (1-ON-1 COACHING)",
+        title: "PRIVATE LESSON (BEGINNER)",
         image: foto6Image,
-        description: "Get personalised coaching tailored to your skill level. Whether you're a first-timer or looking to improve technique, you'll progress faster with focused 1-on-1 attention.",
+        description: "Perfect for first-timers. Get 1-on-1 attention to build your confidence, learn the basics, and catch your first waves safely.",
         pricing: [
-            { sessions: "1 Lesson", duration: "2 hours", priceIDR: "500K IDR", priceUSD: "$27.5 USD", desc: "A perfect introduction to surfing or a focused session to improve specific skills." },
-            { sessions: "3 Lessons", duration: "3 sessions", priceIDR: "1.400K IDR", priceUSD: "$77 USD", desc: "Ideal if you want to build confidence, improve consistently, and spend more time in the water." },
-            { sessions: "5 Lessons", duration: "5 sessions", priceIDR: "2.250K IDR", priceUSD: "$124 USD", desc: "The best choice for surfers who want to progress quickly and develop strong fundamentals." }
+            { sessions: "START FROM", duration: "1 Session", priceIDR: "450K IDR", priceUSD: "Chat Us", desc: "For more information about sessions, multi-day packages, and availability, please contact us further on WhatsApp." }
         ],
-        included: ["Professional surf instructor", "Theory & safety briefing", "Surfboard & Rashguard", "Drinking water", "Lifeguard supervision", "Beach warm-up", "Personal feedback"],
-        whoIsItFor: ["First-time surfers", "Beginners & intermediate", "Solo travellers", "Anyone looking for fast progress"],
+        included: ["Professional surf instructor (1-on-1)", "Theory & safety briefing", "Surfboard & Rashguard", "Drinking water", "Beach warm-up"],
+        whoIsItFor: ["First-time surfers", "Beginners", "Solo travellers"],
         whatToBring: ["Swimwear", "Towel", "Sunscreen", "Positive energy!"]
     },
     {
-        title: "SEMI PRIVATE (2 PEOPLE)",
-        image: foto1Image,
-        description: "Share the stoke with a friend or partner! A great balance of personalised instruction and shared fun in the water. Perfect for couples or surf buddies.",
-        pricing: [
-            { sessions: "1 Lesson", duration: "2 hours", priceIDR: "400K IDR / pax", priceUSD: "$22 USD / pax", desc: "Catch your first waves together and enjoy a fun shared experience." },
-            { sessions: "3 Lessons", duration: "3 sessions", priceIDR: "1.100K IDR / pax", priceUSD: "$60 USD / pax", desc: "Build teamwork and consistency while cheering each other on." },
-            { sessions: "5 Lessons", duration: "5 sessions", priceIDR: "1.800K IDR / pax", priceUSD: "$99 USD / pax", desc: "Master the basics together with comprehensive multi-day sessions." }
-        ],
-        included: ["1 Professional coach for 2 people", "Theory & safety briefing", "Surfboard & Rashguard", "Drinking water", "Lifeguard supervision", "Beach warm-up", "Shared feedback"],
-        whoIsItFor: ["Couples", "Friends travelling together", "Siblings", "Beginners looking for shared fun"],
-        whatToBring: ["Swimwear", "Towel", "Sunscreen", "Positive energy!"]
-    },
-    {
-        title: "GROUP LESSONS (4-8 PEOPLE)",
-        image: foto5Image,
-        description: "Join a fun and social surf session with a small group. Great for travellers, families, or friends wanting to catch waves together while still getting guidance.",
-        pricing: [
-            { sessions: "1 Lesson", duration: "2 hours", priceIDR: "350K IDR / pax", priceUSD: "$19.25 USD / pax", desc: "A fun, social introduction to surfing with fellow travellers." },
-            { sessions: "3 Lessons", duration: "3 sessions", priceIDR: "950K IDR / pax", priceUSD: "$52 USD / pax", desc: "Enjoy consistent practice and make new friends in the water." },
-            { sessions: "5 Lessons", duration: "5 sessions", priceIDR: "1.500K IDR / pax", priceUSD: "$82.5 USD / pax", desc: "Develop skills over a week with a supportive group atmosphere." }
-        ],
-        included: ["Professional surf instructors (Ratio 1:4)", "Theory & group safety briefing", "Surfboard & Rashguard", "Drinking water", "Lifeguard supervision", "Beach warm-up"],
-        whoIsItFor: ["Families", "Backpackers & solo travellers", "Groups of friends", "Budget-conscious beginners"],
-        whatToBring: ["Swimwear", "Towel", "Sunscreen", "Positive energy!"]
-    },
-    {
-        title: "7 DAYS SURF PACKAGE",
+        title: "PRIVATE LESSON (INTERMEDIATE)",
         image: foto10Image,
-        description: "Fully immerse yourself in the surfing lifestyle! This comprehensive 7-day package is designed to take your skills to the next level with consistent daily practice and wave reading analysis.",
+        description: "Already know the basics? This 1-on-1 session focuses on improving your paddling, wave reading, turning, and overall technique.",
         pricing: [
-            { sessions: "Full Package", duration: "7 Days", priceIDR: "3.000K IDR", priceUSD: "$165 USD", desc: "The ultimate surf camp experience without the accommodation. Daily intensive coaching." }
+            { sessions: "START FROM", duration: "1 Session", priceIDR: "450K IDR", priceUSD: "Chat Us", desc: "For more information about sessions, multi-day packages, and availability, please contact us further on WhatsApp." }
         ],
-        included: ["Daily surf sessions", "Advanced theory & wave reading", "Video analysis (Optional/Add-on)", "Surfboard & Rashguard", "Drinking water", "Deep personal feedback"],
-        whoIsItFor: ["Dedicated beginners", "Intermediate surfers aiming high", "Long-term holiday makers"],
-        whatToBring: ["Swimwear", "Towel", "Sunscreen", "Zinc", "Positive energy!"]
+        included: ["Professional surf instructor (1-on-1)", "Wave reading analysis", "Surfboard & Rashguard", "Drinking water", "Advanced technique feedback"],
+        whoIsItFor: ["Intermediate surfers", "Surfers looking to level up", "Solo travellers"],
+        whatToBring: ["Swimwear", "Towel", "Sunscreen", "Positive energy!"]
+    },
+    {
+        title: "SHARED LESSON (2 PEOPLE)",
+        image: foto1Image,
+        description: "Share the stoke with your partner or best friend! A fun, shared experience with personalized guidance from one instructor.",
+        pricing: [
+            { sessions: "START FROM", duration: "1 Session", priceIDR: "750K IDR", priceUSD: "Chat Us", desc: "For more information about sessions, multi-day packages, and availability, please contact us further on WhatsApp." }
+        ],
+        included: ["1 Professional coach for 2 people", "Theory & safety briefing", "Surfboard & Rashguard", "Drinking water", "Shared feedback"],
+        whoIsItFor: ["Couples", "Friends travelling together", "Siblings"],
+        whatToBring: ["Swimwear", "Towel", "Sunscreen", "Positive energy!"]
+    },
+    {
+        title: "SHARED GROUP LESSON",
+        image: foto5Image,
+        description: "Traveling with a group or family? Catch waves together in a fun, safe, and social environment with our experienced instructors.",
+        pricing: [
+            { sessions: "START FROM", duration: "1 Session", priceIDR: "750K IDR", priceUSD: "Chat Us", desc: "For more information about sessions, multi-day packages, and availability, please contact us further on WhatsApp." }
+        ],
+        included: ["Professional surf instructors", "Theory & group safety briefing", "Surfboard & Rashguard", "Drinking water", "Beach warm-up"],
+        whoIsItFor: ["Families", "Groups of friends", "Backpackers"],
+        whatToBring: ["Swimwear", "Towel", "Sunscreen", "Positive energy!"]
     }
 ];
 ---
